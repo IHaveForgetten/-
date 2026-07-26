@@ -1,0 +1,666 @@
+/* ===== 全局重置与基础样式 ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
+    background: #000;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* ===== 屏幕管理 ===== */
+.screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.screen.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen.overlay {
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* ===== 开始界面 ===== */
+#title-screen {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    flex-direction: column;
+}
+
+.title-content {
+    text-align: center;
+    z-index: 2;
+}
+
+.game-title {
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 182, 193, 0.5), 0 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.3rem;
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    from { text-shadow: 0 0 20px rgba(255, 182, 193, 0.3), 0 2px 10px rgba(0,0,0,0.5); }
+    to { text-shadow: 0 0 30px rgba(255, 182, 193, 0.6), 0 2px 15px rgba(0,0,0,0.5); }
+}
+
+.game-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 2rem;
+    letter-spacing: 0.4rem;
+    font-style: italic;
+}
+
+.title-chars {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+}
+
+.title-char-preview {
+    width: 180px;
+    height: 240px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease;
+    background-size: cover;
+    background-position: center top;
+}
+
+.title-char-preview:hover {
+    transform: scale(1.05) translateY(-8px);
+}
+
+.title-btn {
+    padding: 14px 48px;
+    font-size: 1.1rem;
+    color: #fff;
+    background: linear-gradient(135deg, #e94560 0%, #c23a51 100%);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+}
+
+.title-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(233, 69, 96, 0.6);
+}
+
+.title-btn.small {
+    padding: 10px 32px;
+    font-size: 0.95rem;
+}
+
+.title-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.title-link:hover {
+    color: #fff;
+}
+
+/* ===== 游戏主界面 ===== */
+#game-screen {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#game-screen.active {
+    display: flex;
+}
+
+/* 背景层 */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.8s ease;
+    z-index: 0;
+}
+
+.background.fade-out {
+    opacity: 0;
+}
+
+/* 角色立绘层 */
+.character-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 5%;
+    pointer-events: none;
+}
+
+.character {
+    height: 85%;
+    max-height: 700px;
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
+}
+
+.character.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.character.dimmed {
+    opacity: 0.45;
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.15)) grayscale(30%);
+}
+
+.character img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    object-position: bottom center;
+}
+
+.char-left {
+    transform-origin: bottom left;
+}
+
+.char-right {
+    transform-origin: bottom right;
+}
+
+/* 对话框 */
+.dialogue-box {
+    position: relative;
+    z-index: 10;
+    min-height: 160px;
+    margin: 0 40px 24px 40px;
+    padding: 22px 28px;
+    background: linear-gradient(180deg, rgba(20, 20, 35, 0.92) 0%, rgba(10, 10, 20, 0.95) 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dialogue-box:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.speaker-name {
+    position: absolute;
+    top: -16px;
+    left: 20px;
+    padding: 4px 18px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #e94560 0%, #c23a51 100%);
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(233, 69, 96, 0.3);
+}
+
+.speaker-name.narrator {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+}
+
+.dialogue-text {
+    font-size: 1.08rem;
+    line-height: 1.8;
+    color: #eee;
+    min-height: 80px;
+    word-break: break-word;
+}
+
+.dialogue-hint {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.35);
+    animation: hintBlink 1s ease-in-out infinite alternate;
+}
+
+@keyframes hintBlink {
+    from { opacity: 0.2; }
+    to { opacity: 0.6; }
+}
+
+/* 选项区域 */
+.choice-area {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 90%;
+    max-width: 600px;
+}
+
+.choice-btn {
+    padding: 16px 28px;
+    font-size: 1.05rem;
+    color: #fff;
+    background: linear-gradient(135deg, rgba(30, 30, 50, 0.95) 0%, rgba(20, 20, 35, 0.95) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    letter-spacing: 0.03rem;
+}
+
+.choice-btn:hover {
+    background: linear-gradient(135deg, rgba(233, 69, 96, 0.8) 0%, rgba(194, 58, 81, 0.8) 100%);
+    border-color: rgba(233, 69, 96, 0.5);
+    transform: translateX(8px);
+    box-shadow: 0 4px 20px rgba(233, 69, 96, 0.3);
+}
+
+/* UI控制栏 */
+.ui-controls {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    z-index: 15;
+    display: flex;
+    gap: 6px;
+}
+
+.ui-btn {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(4px);
+}
+
+.ui-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.ui-btn.active {
+    color: #e94560;
+    border-color: rgba(233, 69, 96, 0.4);
+}
+
+/* ===== 结局界面 ===== */
+#ending-screen {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.85) 0%, rgba(20, 10, 30, 0.95) 100%);
+    flex-direction: column;
+}
+
+.ending-content {
+    text-align: center;
+    z-index: 2;
+}
+
+.ending-title {
+    font-size: 2.2rem;
+    color: #ffd700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.2rem;
+}
+
+.ending-text {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 2;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+/* ===== 对话记录 ===== */
+.log-content {
+    background: rgba(15, 15, 25, 0.98);
+    border-radius: 16px;
+    padding: 30px;
+    width: 90vw;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.log-content h2 {
+    color: #fff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.log-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.log-entry {
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 3px solid #e94560;
+}
+
+.log-entry .log-speaker {
+    font-weight: bold;
+    color: #e94560;
+    font-size: 0.88rem;
+    margin-bottom: 4px;
+}
+
+.log-entry .log-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+/* ===== 菜单 ===== */
+.menu-content {
+    background: rgba(15, 15, 25, 0.98);
+    border-radius: 16px;
+    padding: 36px;
+    text-align: center;
+}
+
+.menu-content h2 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.menu-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu-btn {
+    padding: 14px 36px;
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    background: rgba(233, 69, 96, 0.2);
+    border-color: rgba(233, 69, 96, 0.4);
+}
+
+/* ===== 滚动条美化 ===== */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== 响应式适配 ===== */
+@media (max-width: 768px) {
+    .game-title {
+        font-size: 2rem;
+        letter-spacing: 0.15rem;
+    }
+    .title-char-preview {
+        width: 120px;
+        height: 160px;
+    }
+    .dialogue-box {
+        margin: 0 16px 16px 16px;
+        padding: 16px 18px;
+        min-height: 130px;
+    }
+    .dialogue-text {
+        font-size: 0.95rem;
+    }
+    .character {
+        max-height: 450px;
+    }
+    .ui-controls {
+        top: 8px;
+        right: 8px;
+    }
+    .ui-btn {
+        padding: 4px 8px;
+        font-size: 0.68rem;
+    }
+}
+
+/* =========================================================
+   手机横屏（Landscape）适配
+   目标：在高度很小的横屏手机上，保证立绘、对话框、选项
+   都清晰可读、可点，并适配刘海/灵动岛安全区。
+   ========================================================= */
+@media (orientation: landscape) and (max-height: 600px) {
+
+    /* --- 角色立绘层：横屏更矮，立绘占下方、左右分布 --- */
+    .character-layer {
+        height: 80%;
+        padding: 0 2%;
+        align-items: flex-end;
+    }
+    .character {
+        height: 92%;
+        max-height: 92vh;
+    }
+
+    /* --- 对话框：横屏变矮、变宽，贴底并避让安全区 --- */
+    .dialogue-box {
+        margin: 0
+                calc(12px + env(safe-area-inset-right))
+                calc(10px + env(safe-area-inset-bottom))
+                calc(12px + env(safe-area-inset-left));
+        padding: 12px 18px;
+        min-height: 92px;
+        border-radius: 10px;
+    }
+    .dialogue-text {
+        font-size: 0.92rem;
+        line-height: 1.55;
+        min-height: 52px;
+    }
+    .speaker-name {
+        font-size: 0.8rem;
+        padding: 3px 14px;
+        top: -13px;
+        left: 16px;
+    }
+    .dialogue-hint {
+        font-size: 0.7rem;
+        bottom: 6px;
+        right: 12px;
+    }
+
+    /* --- 选项：横屏下并排两列，节省垂直空间 --- */
+    .choice-area {
+        bottom: calc(104px + env(safe-area-inset-bottom));
+        width: 94%;
+        max-width: 880px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    .choice-btn {
+        flex: 1 1 42%;
+        padding: 11px 18px;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    .choice-btn:hover {
+        transform: translateY(-3px);
+    }
+
+    /* --- UI 控制栏：右上角，避让安全区，触控热区加大 --- */
+    .ui-controls {
+        top: calc(6px + env(safe-area-inset-top));
+        right: calc(8px + env(safe-area-inset-right));
+        gap: 5px;
+    }
+    .ui-btn {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+
+    /* --- 标题界面横屏压缩 --- */
+    .game-title {
+        font-size: 2.1rem;
+        letter-spacing: 0.2rem;
+        margin-bottom: 0.3rem;
+    }
+    .game-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 0.8rem;
+        letter-spacing: 0.25rem;
+    }
+    .title-chars {
+        gap: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    .title-char-preview {
+        width: 108px;
+        height: 144px;
+    }
+    .title-btn {
+        padding: 10px 36px;
+        font-size: 1rem;
+    }
+
+    /* --- 结局 / 菜单 / 记录界面横屏压缩 --- */
+    .ending-title {
+        font-size: 1.7rem;
+        margin-bottom: 0.8rem;
+    }
+    .ending-text {
+        font-size: 0.92rem;
+        line-height: 1.7;
+        max-width: 82vw;
+        margin-bottom: 1.2rem;
+    }
+    .ending-content,
+    .menu-content,
+    .log-content {
+        padding: 18px 26px;
+    }
+    .log-content,
+    .menu-content {
+        max-height: 88vh;
+    }
+    .menu-btn {
+        padding: 11px 30px;
+        font-size: 0.95rem;
+    }
+}
+
+/* =========================================================
+   竖屏旋转提示（仅触屏手机竖屏时显示）
+   桌面横屏 / 平板不触发；提示用户旋转到横屏。
+   ========================================================= */
+#rotate-hint {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 24px;
+}
+
+#rotate-hint .rotate-icon {
+    font-size: 4rem;
+    margin-bottom: 1.2rem;
+    animation: rotatePhone 2s ease-in-out infinite;
+}
+
+#rotate-hint .rotate-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.6rem;
+}
+
+#rotate-hint .rotate-sub {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+@keyframes rotatePhone {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(-90deg); }
+    75%  { transform: rotate(-90deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@media (orientation: portrait) and (max-width: 920px) and (pointer: coarse) {
+    #rotate-hint {
+        display: flex;
+    }
+}

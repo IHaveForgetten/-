@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+    <title>夏日课间的邂逅</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 开始界面 -->
+    <div id="title-screen" class="screen active">
+        <div class="title-content">
+            <h1 class="game-title">夏日课间的邂逅</h1>
+            <p class="game-subtitle">A Summer Encounter</p>
+            <div class="title-chars">
+                <div class="title-char-preview" id="title-pangju"></div>
+                <div class="title-char-preview" id="title-wangbc"></div>
+            </div>
+            <button id="start-btn" class="title-btn">▶ 开始游戏</button>
+            <div class="title-menu">
+                <button id="continue-btn" class="title-link" style="display:none;">继续游戏</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 游戏主界面 -->
+    <div id="game-screen" class="screen">
+        <!-- 背景层 -->
+        <div id="background" class="background"></div>
+
+        <!-- 角色立绘层 -->
+        <div id="character-layer" class="character-layer">
+            <div id="char-left" class="character char-left">
+                <img id="char-left-img" src="" alt="">
+            </div>
+            <div id="char-right" class="character char-right">
+                <img id="char-right-img" src="" alt="">
+            </div>
+        </div>
+
+        <!-- 对话框 -->
+        <div id="dialogue-box" class="dialogue-box">
+            <div id="speaker-name" class="speaker-name"></div>
+            <div id="dialogue-text" class="dialogue-text"></div>
+            <div id="dialogue-hint" class="dialogue-hint">▼ 点击继续</div>
+        </div>
+
+        <!-- 选项区域 -->
+        <div id="choice-area" class="choice-area" style="display:none;"></div>
+
+        <!-- UI控制栏 -->
+        <div id="ui-controls" class="ui-controls">
+            <button id="btn-auto" class="ui-btn" title="自动播放">自动</button>
+            <button id="btn-save" class="ui-btn" title="保存">保存</button>
+            <button id="btn-load" class="ui-btn" title="读取">读取</button>
+            <button id="btn-log" class="ui-btn" title="对话记录">记录</button>
+            <button id="btn-skip" class="ui-btn" title="跳过">跳过</button>
+            <button id="btn-menu" class="ui-btn" title="菜单">菜单</button>
+        </div>
+    </div>
+
+    <!-- 结局界面 -->
+    <div id="ending-screen" class="screen">
+        <div class="ending-content">
+            <h2 id="ending-title" class="ending-title"></h2>
+            <div id="ending-text" class="ending-text"></div>
+            <button id="ending-btn" class="title-btn">返回标题</button>
+        </div>
+    </div>
+
+    <!-- 对话记录界面 -->
+    <div id="log-screen" class="screen overlay">
+        <div class="log-content">
+            <h2>对话记录</h2>
+            <div id="log-list" class="log-list"></div>
+            <button id="log-close" class="title-btn small">关闭</button>
+        </div>
+    </div>
+
+    <!-- 菜单界面 -->
+    <div id="menu-screen" class="screen overlay">
+        <div class="menu-content">
+            <h2>菜单</h2>
+            <div class="menu-options">
+                <button id="menu-resume" class="menu-btn">继续游戏</button>
+                <button id="menu-restart" class="menu-btn">重新开始</button>
+                <button id="menu-title" class="menu-btn">返回标题</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 竖屏旋转提示（手机竖屏时显示，提示切换到横屏） -->
+    <div id="rotate-hint">
+        <div class="rotate-icon">📱</div>
+        <div class="rotate-text">请旋转设备到横屏</div>
+        <div class="rotate-sub">本游戏为横屏视觉小说，横屏体验更佳</div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
