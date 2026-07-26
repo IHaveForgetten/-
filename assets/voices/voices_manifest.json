@@ -1,0 +1,544 @@
+{
+  "bc0d47a03d0f": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "高二夏天，期末考试前的最后一个午休。",
+    "file": "bc0d47a03d0f.mp3"
+  },
+  "3d3b44d44e22": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "……算了，当我没说。",
+    "file": "3d3b44d44e22.mp3"
+  },
+  "cd24ef0df6a7": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "……！",
+    "file": "cd24ef0df6a7.mp3",
+    "skip": true
+  },
+  "03bfe3fc3435": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "教室里的人走得差不多了，只剩下窗外的蝉鸣声。",
+    "file": "03bfe3fc3435.mp3"
+  },
+  "72cb31e872a6": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "等等——",
+    "file": "72cb31e872a6.mp3"
+  },
+  "6f136314cdb0": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "王炳程愣了一秒。然后——",
+    "file": "6f136314cdb0.mp3"
+  },
+  "42779366c571": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "（假装收拾书包……其实是在等某人）",
+    "file": "42779366c571.mp3"
+  },
+  "dfc90218c187": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "（心跳好快……冷静冷静胖橘你可以的）",
+    "file": "dfc90218c187.mp3"
+  },
+  "d7db6b605cbe": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "他笑了。那种从眼底漾开的、从未见过的笑容。",
+    "file": "d7db6b605cbe.mp3"
+  },
+  "d0f13ea142c7": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "（嘿嘿，按照他的习惯，这个点应该快来了吧……）",
+    "file": "d0f13ea142c7.mp3"
+  },
+  "5ee17fe3bdb3": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "……我听清了。你是认真的对吧。",
+    "file": "5ee17fe3bdb3.mp3"
+  },
+  "1ba9ec2c5cff": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "……笨蛋。",
+    "file": "1ba9ec2c5cff.mp3"
+  },
+  "743ffaf76c5a": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "后门被轻轻推开——",
+    "file": "743ffaf76c5a.mp3"
+  },
+  "8c76fc982219": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "……嗯。",
+    "file": "8c76fc982219.mp3"
+  },
+  "79772210baa6": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "那以后只准逗我一个人。",
+    "file": "79772210baa6.mp3"
+  },
+  "39f6886e0663": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "……",
+    "file": "39f6886e0663.mp3",
+    "skip": true
+  },
+  "e2714e97c5ab": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "胖橘收起了平时嬉皮笑脸的样子，认真地看着王炳程的眼睛。",
+    "file": "e2714e97c5ab.mp3"
+  },
+  "823bf04e3b28": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "（脸好烫……但好开心）",
+    "file": "823bf04e3b28.mp3"
+  },
+  "9cd6b6898db7": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "你还没走啊。",
+    "file": "9cd6b6898db7.mp3"
+  },
+  "db783a39ef60": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "……你是认真的吗？",
+    "file": "db783a39ef60.mp3"
+  },
+  "ae04058728af": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "成交！那说好了，暑假一起去海边！",
+    "file": "ae04058728af.mp3"
+  },
+  "b2a886470f13": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "哎呀王同学！这不是在等你嘛～",
+    "file": "b2a886470f13.mp3"
+  },
+  "39faedcde97f": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "嗯。我是认真的。",
+    "file": "39faedcde97f.mp3"
+  },
+  "00d9e966c60a": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "嗯。说好了，不许反悔哦。",
+    "file": "00d9e966c60a.mp3"
+  },
+  "16093fd647d6": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "……谁要你等了。",
+    "file": "16093fd647d6.mp3"
+  },
+  "1d1d5f593a0b": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "（……啊啊啊他说他是认真的）",
+    "file": "1d1d5f593a0b.mp3"
+  },
+  "fa2c436d897f": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "夕阳下，两人的影子被拉得很长很长。",
+    "file": "fa2c436d897f.mp3"
+  },
+  "c314f874c0c6": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "他走到桌边，把一瓶冰可乐轻轻放在你的桌上。",
+    "file": "c314f874c0c6.mp3"
+  },
+  "fde44db32ae2": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "几天后的放学后。图书馆。",
+    "file": "fde44db32ae2.mp3"
+  },
+  "0abd17c51d39": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "这个夏天，才刚刚开始。",
+    "file": "0abd17c51d39.mp3"
+  },
+  "58ddbabcee29": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "……我看你还没去食堂。",
+    "file": "58ddbabcee29.mp3"
+  },
+  "2e37a9f9ca9a": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "胖橘正在复习数学，随手从书架上抽出一本习题集。",
+    "file": "2e37a9f9ca9a.mp3"
+  },
+  "fdd9b22f0d25": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "……对。全部都是有意的。",
+    "file": "fdd9b22f0d25.mp3"
+  },
+  "9f36acce7a78": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "刚好便利店买一送一，多了而已。",
+    "file": "9f36acce7a78.mp3"
+  },
+  "002b1ec1eda8": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "翻开封面——一张折好的纸条掉了出来。",
+    "file": "002b1ec1eda8.mp3"
+  },
+  "744843218bc8": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "从第一天就是。",
+    "file": "744843218bc8.mp3"
+  },
+  "68335e8ee4d4": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "哇！专门给我买的？感动死了王炳程你果然是个大好人！",
+    "file": "68335e8ee4d4.mp3"
+  },
+  "ff76fcc4b246": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "嗯？这是……",
+    "file": "ff76fcc4b246.mp3"
+  },
+  "19da27500b0c": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "王炳程的眼镜后闪过一丝惊讶，随即化为释然的微笑。",
+    "file": "19da27500b0c.mp3"
+  },
+  "9e7a243aac1b": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "……吃你的饭吧。",
+    "file": "9e7a243aac1b.mp3"
+  },
+  "5b7055822042": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "纸条上写着熟悉的字迹——",
+    "file": "5b7055822042.mp3"
+  },
+  "408538f612a8": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "……那就好。",
+    "file": "408538f612a8.mp3"
+  },
+  "374be4833aff": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "（冰可乐罐上还带着水珠……这家伙，嘴硬心软）",
+    "file": "374be4833aff.mp3"
+  },
+  "6a417b25bb6c": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "「今天放学后，老地方（操场后面的花坛），等你。——W」",
+    "file": "6a417b25bb6c.mp3"
+  },
+  "fe2ad754c57a": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "我也一样。从第一天起就在注意你了。",
+    "file": "fe2ad754c57a.mp3"
+  },
+  "855296bb78f6": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "两人一起走向操场。午后的阳光透过树叶洒下来，斑驳地落在小路上。",
+    "file": "855296bb78f6.mp3"
+  },
+  "0603a438b95f": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "（心脏……怎么跳得这么快……）",
+    "file": "0603a438b95f.mp3"
+  },
+  "80215651cc71": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "（原来……是双向的吗）",
+    "file": "80215651cc71.mp3"
+  },
+  "b257528a570a": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "话说，期末考完就放暑假了诶。你有什么打算？",
+    "file": "b257528a570a.mp3"
+  },
+  "00bee5784a44": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "（W……这家伙，还挺浪漫的嘛）",
+    "file": "00bee5784a44.mp3"
+  },
+  "c7c7780dba14": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "不需要太多言语。两人在黄昏中牵起手，慢慢往教室的方向走去。",
+    "file": "c7c7780dba14.mp3"
+  },
+  "710b7c91ff69": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "……也就看看书吧。没什么特别的。",
+    "file": "710b7c91ff69.mp3"
+  },
+  "c3e1f1598830": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "——操场后面，花坛边。",
+    "file": "c3e1f1598830.mp3"
+  },
+  "7ea9f721c0bf": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "有些事情不用说出口，彼此都懂。",
+    "file": "7ea9f721c0bf.mp3"
+  },
+  "245ed8c77d20": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "看书？暑假诶！年轻人不要这么宅嘛！",
+    "file": "245ed8c77d20.mp3"
+  },
+  "96e1223ef6bf": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "夕阳把天空染成了橙红色。王炳程已经站在那里了。",
+    "file": "96e1223ef6bf.mp3"
+  },
+  "d5a803e59681": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "这就够了。",
+    "file": "d5a803e59681.mp3"
+  },
+  "b8af9b36db5b": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "要不要出来玩？我带你上分！",
+    "file": "b8af9b36db5b.mp3"
+  },
+  "5ea6b0a019f0": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "你来了。",
+    "file": "5ea6b0a019f0.mp3"
+  },
+  "ae97fd79a5c3": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "让我再想想……可以吗？",
+    "file": "ae97fd79a5c3.mp3"
+  },
+  "6a700c22548d": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "……你那个技术，还是算了吧。",
+    "file": "6a700c22548d.mp3"
+  },
+  "876fc04ff3da": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "嗯……让你久等了。",
+    "file": "876fc04ff3da.mp3"
+  },
+  "a67fb587d427": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "王炳程的眼神黯淡了一瞬，但他很快恢复了温和的表情。",
+    "file": "a67fb587d427.mp3"
+  },
+  "d5b800070b86": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "喂！我很强的好不好！",
+    "file": "d5b800070b86.mp3"
+  },
+  "eb7c4ccde426": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "风轻轻吹过，花坛里的向日葵微微摇曳。",
+    "file": "eb7c4ccde426.mp3"
+  },
+  "de296bd5e9c4": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "……好。我可以等。",
+    "file": "de296bd5e9c4.mp3"
+  },
+  "12651da1c34c": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "笑声渐渐安静下来。王炳程忽然不说话了，低头看着手里的可乐。",
+    "file": "12651da1c34c.mp3"
+  },
+  "fb599efe2f69": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "胖橘。其实我一直想问你一件事。",
+    "file": "fb599efe2f69.mp3"
+  },
+  "40a2f3d2dbda": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "不用有压力。先做朋友也挺好的。",
+    "file": "40a2f3d2dbda.mp3"
+  },
+  "a2f52e0fa1a4": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "……胖橘。",
+    "file": "a2f52e0fa1a4.mp3"
+  },
+  "228ce45e18b7": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "什么事？",
+    "file": "228ce45e18b7.mp3"
+  },
+  "14128da45aeb": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "（看着他转身离开的背影……脚步好像比平时慢了很多）",
+    "file": "14128da45aeb.mp3"
+  },
+  "b8f0409c7f5b": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "暑假……你有什么打算？",
+    "file": "b8f0409c7f5b.mp3"
+  },
+  "c356d5b0c9b2": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "从开学换座位那天起，你就总爱找我说话、逗我笑、给我带零食……",
+    "file": "c356d5b0c9b2.mp3"
+  },
+  "f128993f07b4": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "胖橘望着那个渐行渐远的背影，心里某个地方隐隐作痛。",
+    "file": "f128993f07b4.mp3"
+  },
+  "f6cdf28e598a": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "胖橘一把抓住王炳程的袖子。",
+    "file": "f6cdf28e598a.mp3"
+  },
+  "149ca9497cc8": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "那些……都是无意的吗？",
+    "file": "149ca9497cc8.mp3"
+  },
+  "a881264735c5": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "也许……有些答案，需要更多勇气才能给出。",
+    "file": "a881264735c5.mp3"
+  },
+  "e0391ef7bc15": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "嗯？不是刚问过吗？就宅家打游戏呗……",
+    "file": "e0391ef7bc15.mp3"
+  },
+  "cdd8bf280ff6": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "空气仿佛凝固了。胖橘看着王炳程的眼睛——那双藏在镜片后的眼睛，此刻正认真地注视着自己。",
+    "file": "cdd8bf280ff6.mp3"
+  },
+  "62aa7453800d": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "故事，还没有结束。",
+    "file": "62aa7453800d.mp3"
+  },
+  "2ece41934b8a": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "咋了，你想约我？（半开玩笑）",
+    "file": "2ece41934b8a.mp3"
+  },
+  "bc97bddc1be6": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "胖橘不再逃避了。",
+    "file": "bc97bddc1be6.mp3"
+  },
+  "3828b37bf92c": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "沉默了几秒。",
+    "file": "3828b37bf92c.mp3"
+  },
+  "2a8722105a30": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "王炳程你这个笨蛋……",
+    "file": "2a8722105a30.mp3"
+  },
+  "2f7ae87bb3e7": {
+    "speaker": "wangbc",
+    "voice": "zh-CN-YunyangNeural",
+    "text": "……如果我说想呢。",
+    "file": "2f7ae87bb3e7.mp3"
+  },
+  "01a6af10cba2": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "胖橘上前一步，一把拉住了王炳程的手。",
+    "file": "01a6af10cba2.mp3"
+  },
+  "b2be3fe7f153": {
+    "speaker": "narrator",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "text": "胖橘愣住了。这不像平时那个总是面无表情的王炳程。",
+    "file": "b2be3fe7f153.mp3"
+  },
+  "76e7f2081fa1": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "我逗你是因为喜欢你啊！从很早以前就是了！",
+    "file": "76e7f2081fa1.mp3"
+  },
+  "207f1853823e": {
+    "speaker": "pangju",
+    "voice": "zh-CN-YunxiNeural",
+    "text": "哈？你说啥？没听清，再说一遍？",
+    "file": "207f1853823e.mp3"
+  }
+}

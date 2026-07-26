@@ -298,6 +298,30 @@ let bgm = new Audio(MUSIC.bgm);
 bgm.loop = true;       
 bgm.volume = 0.5;     
 //end
+
+    // ===== 配音系统（对话逐句 AI 配音） =====
+    let voiceAudio = new Audio();
+    let voiceMuted = false;
+
+    function playVoice(speaker, text) {
+        if (voiceMuted) return;
+        const key = (speaker || 'narrator') + '::' + (text || '').trim();
+        const file = (window.VOICE_MAP && window.VOICE_MAP[key]) || null;
+        if (!file) return; // 无配音资源（静音句）直接跳过
+        try {
+            if (!voiceAudio.paused) voiceAudio.pause();
+            voiceAudio.src = 'assets/voices/' + file;
+            voiceAudio.volume = 1.0;
+            voiceAudio.currentTime = 0;
+            const p = voiceAudio.play();
+            if (p && p.catch) p.catch(() => {});
+        } catch (e) { /* 忽略播放异常 */ }
+    }
+
+    function stopVoice() {
+        try { voiceAudio.pause(); voiceAudio.currentTime = 0; } catch (e) {}
+    }
+//end
     // ===== DOM 元素缓存 =====
     const DOM = {};
 
@@ -330,6 +354,7 @@ bgm.volume = 0.5;
         DOM.btnLog = document.getElementById('btn-log');
         DOM.btnSkip = document.getElementById('btn-skip');
         DOM.btnMenu = document.getElementById('btn-menu');
+        DOM.btnVoice = document.getElementById('btn-voice');
         DOM.menuResume = document.getElementById('menu-resume');
         DOM.menuRestart = document.getElementById('menu-restart');
         DOM.menuTitle = document.getElementById('menu-title');
@@ -483,6 +508,7 @@ bgm.volume = 0.5;
             });
         }
 
+        playVoice(speaker, text);
         typeText(text);
     }
 
@@ -495,6 +521,7 @@ bgm.volume = 0.5;
         if (state.characters.left) dimCharacter('left');
         if (state.characters.right) dimCharacter('right');
 
+        playVoice('narrator', text);
         typeText(text);
     }
 
@@ -781,6 +808,7 @@ bgm.volume = 0.5;
 
         // 结局界面返回
         DOM.endingBtn.addEventListener('click', () => {
+            stopVoice();
             showScreen('title-screen');
             checkSaveData();
         });
@@ -816,6 +844,14 @@ bgm.volume = 0.5;
             showScreen('menu-screen');
         });
 
+        // 配音开关
+        DOM.btnVoice.addEventListener('click', () => {
+            voiceMuted = !voiceMuted;
+            DOM.btnVoice.classList.toggle('active', !voiceMuted);
+            DOM.btnVoice.textContent = voiceMuted ? '🔇' : '🔊';
+            if (voiceMuted) stopVoice();
+        });
+
         // 菜单按钮
         DOM.menuResume.addEventListener('click', () => {
             showScreen('game-screen');
@@ -830,6 +866,7 @@ bgm.volume = 0.5;
         });
         DOM.menuTitle.addEventListener('click', () => {
 			stopBGM();
+            stopVoice();
             showScreen('title-screen');
             checkSaveData();
         });
