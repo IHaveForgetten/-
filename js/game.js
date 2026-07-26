@@ -274,6 +274,7 @@
         autoMode: false,
         autoTimer: null,
         skipMode: false,
+        waitingForChoice: false,
         dialogueLog: [],
         currentBg: null,
         characters: {
@@ -518,6 +519,7 @@
     }
 
     function selectChoice(choice) {
+        state.waitingForChoice = false;
         DOM.choiceArea.style.display = 'none';
         DOM.dialogueBox.style.cursor = 'pointer';
 
@@ -568,7 +570,7 @@
 
     // ===== 自动播放 =====
     function handleAutoAdvance() {
-        if (state.autoMode && !state.isTyping) {
+        if (state.autoMode && !state.isTyping && !state.waitingForChoice) {
             state.autoTimer = setTimeout(() => {
                 advanceScript();
             }, 1800); // 等待1.8秒后自动继续
@@ -647,6 +649,7 @@
         state.characters.right = null;
         state.autoMode = false;
         state.skipMode = false;
+        state.waitingForChoice = false;
         DOM.btnAuto.classList.remove('active');
         clearTimeout(state.autoTimer);
         clearTimeout(typewriterTimer);
@@ -696,8 +699,10 @@
                 break;
 
             case 'choice':
+                state.waitingForChoice = true;
                 showChoices(cmd.choices);
-                state.currentIndex++;
+                // 保持 currentIndex 指向 choice 节点，等待玩家选择；
+                // 未选择前禁止推进（见 advanceScript 拦截）
                 break;
 
             case 'label':
@@ -722,6 +727,8 @@
 
     function advanceScript() {
         clearTimeout(state.autoTimer);
+        // 等待玩家做出选项时，禁止通过点击/空格/自动跳过选项
+        if (state.waitingForChoice) return;
         if (state.currentIndex >= SCRIPT.length) return;
         executeCommand();
     }
