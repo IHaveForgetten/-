@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>青春</title>
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+
+    /* 修改这里：你的背景图片 */
+
+    background-image:
+    url("你的背景图片链接");
+
+
+    background-size:cover;
+
+    background-position:center;
+
+
+    font-family:
+    "Microsoft YaHei",
+    "PingFang SC",
+    sans-serif;
+
+
+    animation:bgMove 15s infinite alternate;
+
+}
+
+
+
+/* 背景缓慢推进 */
+
+@keyframes bgMove{
+
+from{
+
+background-size:100%;
+
+}
+
+
+to{
+
+background-size:115%;
+
+}
+
+}
+
+
+
+/* 遮罩 */
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+
+background:
+rgba(0,0,0,.38);
+
+}
+
+
+
+/* 主容器 */
+
+.container{
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+color:white;
+
+padding:20px;
+
+}
+
+
+
+/* 主标题 */
+
+.text{
+
+font-size:
+clamp(32px,6vw,65px);
+
+
+letter-spacing:10px;
+
+
+font-weight:300;
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+flex-wrap:wrap;
+
+
+text-shadow:
+
+0 0 20px rgba(255,255,255,.8);
+
+
+}
+
+
+
+
+/* 单字 */
+
+.char{
+
+
+display:inline-block;
+
+
+opacity:0;
+
+
+transform:
+
+translateY(50px)
+
+scale(.8);
+
+
+
+animation:
+
+show 1s forwards;
+
+
+}
+
+
+
+
+@keyframes show{
+
+
+0%{
+
+opacity:0;
+
+
+transform:
+
+translateY(50px)
+
+scale(.8);
+
+
+filter:blur(10px);
+
+}
+
+
+
+100%{
+
+opacity:1;
+
+
+transform:
+
+translateY(0)
+
+scale(1);
+
+
+filter:blur(0);
+
+}
+
+
+}
+
+
+
+
+
+/* 英文 */
+
+.sub{
+
+
+margin-top:40px;
+
+
+font-size:15px;
+
+
+letter-spacing:6px;
+
+
+color:
+
+rgba(255,255,255,.7);
+
+
+
+opacity:0;
+
+
+animation:
+
+fade 2s 4s forwards;
+
+
+}
+
+
+
+
+/* 底部文字 */
+
+.footer-text{
+
+
+margin-top:25px;
+
+
+font-size:12px;
+
+
+letter-spacing:3px;
+
+
+line-height:2;
+
+
+color:
+
+rgba(255,255,255,.65);
+
+
+
+opacity:0;
+
+
+animation:
+
+fade 2s 5s forwards;
+
+
+}
+
+
+
+
+
+@keyframes fade{
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+
+
+
+
+/* 星光 */
+
+.star{
+
+
+position:absolute;
+
+
+width:3px;
+
+height:3px;
+
+
+background:white;
+
+
+border-radius:50%;
+
+
+opacity:.5;
+
+
+animation:
+
+float 6s infinite;
+
+
+}
+
+
+
+
+@keyframes float{
+
+
+0%{
+
+transform:
+translateY(0);
+
+
+opacity:0;
+
+}
+
+
+50%{
+
+opacity:1;
+
+}
+
+
+
+100%{
+
+transform:
+translateY(-120px);
+
+
+opacity:0;
+
+}
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- 本地音乐 -->
+
+<audio
+
+id="bgMusic"
+
+src="./assets/music/BackMusic.mp3"
+
+autoplay
+
+loop>
+
+</audio>
+
+
+
+
+<div class="container">
+
+
+<div class="text" id="text"></div>
+
+
+<div class="sub">
+
+SOME MOMENTS NEVER FADE
+
+</div>
+
+
+<div class="footer-text">
+
+<div>
+We hope we will have a good ending
+</div>
+
+<div>
+TO TY XB and BL &amp; 2026
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+// 文字动画
+
+const sentence =
+"至少我见过你十五六岁的样子";
+
+
+const box =
+document.getElementById("text");
+
+
+
+[...sentence].forEach(
+(char,index)=>{
+
+
+let span =
+document.createElement("span");
+
+
+span.className="char";
+
+
+span.innerHTML=char;
+
+
+span.style.animationDelay =
+
+`${index*0.25}s`;
+
+
+
+box.appendChild(span);
+
+
+});
+
+
+
+
+
+
+
+// 星光
+
+for(let i=0;i<35;i++){
+
+
+let star =
+document.createElement("div");
+
+
+star.className="star";
+
+
+star.style.left =
+Math.random()*100+"%";
+
+
+star.style.top =
+Math.random()*100+"%";
+
+
+
+star.style.animationDelay =
+
+Math.random()*6+"s";
+
+
+
+document.body.appendChild(star);
+
+
+}
+
+
+
+
+
+
+
+// 自动播放音乐
+
+const music =
+document.getElementById("bgMusic");
+
+
+
+window.onload=function(){
+
+
+music.volume=0;
+
+
+
+music.play();
+
+
+
+
+let volume=0;
+
+
+
+let fadeIn=setInterval(()=>{
+
+
+volume+=0.02;
+
+
+music.volume=volume;
+
+
+
+if(volume>=0.5){
+
+
+clearInterval(fadeIn);
+
+
+}
+
+
+
+},100);
+
+
+
+};
+
+
+
+</script>
+
+
+</body>
+
+</html>

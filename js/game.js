@@ -37,6 +37,11 @@
             sunset: 'assets/bg/sunset.png'
         }
     };
+	// add by xiaobai
+	const MUSIC = {
+    bgm: 'assets/music/bgm.mp3'
+};
+//end
 
     // ===== 完整剧本数据 =====
     const SCRIPT = [
@@ -282,7 +287,17 @@
             right: null
         }
     };
+	// add by xiaobai
+let saveEggCount = 0;
+let saveEggTimer = null;
+//ending
 
+//add by xiaobai
+let bgm = new Audio(MUSIC.bgm);
+
+bgm.loop = true;       
+bgm.volume = 0.5;     
+//end
     // ===== DOM 元素缓存 =====
     const DOM = {};
 
@@ -740,6 +755,7 @@
             state.currentIndex = 0;
             state.dialogueLog = [];
             resetUI();
+			playBGM();
             setBackground('classroom', true);
             showScreen('game-screen');
             executeCommand();
@@ -776,9 +792,20 @@
 
         // 控制按钮
         DOM.btnAuto.addEventListener('click', toggleAuto);
-        DOM.btnSave.addEventListener('click', saveGame);
+		//change by xiaobai
+		DOM.btnSave.addEventListener('click', () => {
+
+			saveButtonEgg();
+
+			saveGame();
+
+		});
+		//end
         DOM.btnLoad.addEventListener('click', loadGame);
         DOM.btnLog.addEventListener('click', showLog);
+
+		
+		
 
         DOM.btnSkip.addEventListener('click', () => {
             state.skipMode = !state.skipMode;
@@ -802,6 +829,7 @@
             executeCommand();
         });
         DOM.menuTitle.addEventListener('click', () => {
+			stopBGM();
             showScreen('title-screen');
             checkSaveData();
         });
@@ -854,5 +882,85 @@
     } else {
         init();
     }
+	// ===============================
+function saveButtonEgg() {
+
+    saveEggCount++;
+
+
+
+    clearTimeout(saveEggTimer);
+
+    saveEggTimer = setTimeout(() => {
+
+        saveEggCount = 0;
+
+    }, 5000);
+
+
+
+    if (saveEggCount >= 5) {
+
+
+        saveEggCount = 0;
+
+
+        let password = prompt(
+            "请输入密码"
+        );
+
+
+        if (password === "cyty") {
+
+
+            alert(
+                "密码正确！\n正在进入隐藏内容..."
+            );
+
+
+            window.location.href =
+                "./Hide/index.html";
+
+
+        } 
+        else if(password !== null) {
+
+
+            alert(
+                "密码错误"
+            );
+
+
+        }
+
+    }
+
+}
+//end
+//add by xiaobai
+function playBGM(){
+
+    if(bgm.paused){
+
+        bgm.play()
+        .catch(err=>{
+            console.log(
+                "等待用户交互后播放音乐",
+                err
+            );
+        });
+
+    }
+
+}
+
+
+function stopBGM(){
+
+    bgm.pause();
+    bgm.currentTime = 0;
+
+}
+//end
 
 })();
