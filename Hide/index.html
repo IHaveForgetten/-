@@ -27,12 +27,8 @@ body{
     justify-content:center;
     align-items:center;
 
-
-    /* 修改这里：你的背景图片 */
-
     background-image:
     url("你的背景图片链接");
-
 
     background-size:cover;
 
@@ -428,7 +424,10 @@ TO TY XB and BL &amp; 2026
 <script>
 
 
+// =======================
 // 文字动画
+// =======================
+
 
 const sentence =
 "至少我见过你十五六岁的样子";
@@ -470,7 +469,10 @@ box.appendChild(span);
 
 
 
+// =======================
 // 星光
+// =======================
+
 
 for(let i=0;i<35;i++){
 
@@ -508,7 +510,10 @@ document.body.appendChild(star);
 
 
 
+// =======================
 // 自动播放音乐
+// =======================
+
 
 const music =
 document.getElementById("bgMusic");
@@ -556,6 +561,63 @@ clearInterval(fadeIn);
 
 
 };
+
+
+
+
+
+
+// =======================
+// 隐藏彩蛋
+// 连续点击10次进入 hide.html
+// =======================
+
+
+let clickCount = 0;
+
+let clickTimer = null;
+
+
+
+document.body.addEventListener("click",()=>{
+
+
+clickCount++;
+
+
+
+clearTimeout(clickTimer);
+
+
+
+clickTimer=setTimeout(()=>{
+
+
+clickCount=0;
+
+
+},3000);
+
+
+
+
+
+if(clickCount>=10){
+
+
+clickCount=0;
+
+
+
+window.location.href="./hide.html";
+
+
+
+}
+
+
+
+});
 
 
 
